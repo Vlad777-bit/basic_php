@@ -11,7 +11,7 @@
   }
 
   function div($a, $b) {
-    return $a / $b;
+    return $b ? $a / $b : "Ошибка, на $b делить нельзя";
   }
 
   function mul($a, $b) {
@@ -23,16 +23,16 @@
   function mathOperation($arg1, $arg2, $operation) {
     switch($operation) {
 
-      case 'addition':
+      case '+':
         return add($arg1, $arg2);
       
-      case 'subtraction':
+      case '-':
         return sub($arg1, $arg2);
 
-      case 'division':
+      case '/':
         return div($arg1, $arg2);
 
-      case 'multiplication':
+      case '*':
         return mul($arg1, $arg2);
     }
   }
