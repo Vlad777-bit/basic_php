@@ -41,4 +41,4 @@ function translit($word) {
   return strtr($word, $alphabet);
 }
 
-echo translit('как дела?');
+echo translit('как дела?' . '<br>');

@@ -24,4 +24,4 @@ function changeStr($str) {
 //   return str_replace(" ", "_", $str);
 // }
 
-echo changeStr('hello world! How are you?');
+echo changeStr('hello world! How are you?' . '<br>');
