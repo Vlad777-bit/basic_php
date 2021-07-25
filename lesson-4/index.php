@@ -35,6 +35,5 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
-<script src="./js/modal.js"></script>
 </body>
 </html>
