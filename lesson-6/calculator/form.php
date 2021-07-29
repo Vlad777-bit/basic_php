@@ -12,6 +12,6 @@
   <input type="number" name="secondNumber" value="7">
 
   <input type="submit" name="send" value="=">
-  <span><?= $_GET['result'] ?></span>
+  <span><?= round($_GET['result'], 3) ?></span>
 </form>
 
