@@ -29,7 +29,7 @@
 </head>
 <body>
   <img src="../<?= $path . $name ?>" alt="full_photo"><br>
-  <span>Кол-во просмотров <?= $view ?></span>
+  <span>Кол-во просмотров <?= ++$view ?></span>
   
 </body>
 </html>
