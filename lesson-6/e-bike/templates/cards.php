@@ -5,4 +5,4 @@
  
 <div class="links">
     <?= renderCards($result, './public/', '223px') ?>
-</div>
+</div> 

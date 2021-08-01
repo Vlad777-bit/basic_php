@@ -11,11 +11,11 @@
 <div class="container">
 
     <header>
-        <img src="./public/img/e-bike.webp" alt="logo">
+       <a href="index.php"><img src="./public/img/e-bike.webp" alt="logo"></a> 
         <ul class="menu">
             <li><a class="menu_link" href="index.php">Главная</a></li>
             <li><a class="menu_link" href="catalog.php">Каталог</a></li>
-            <li><a class="menu_link" href="contacts.php">Контакты</a></li>
+            <li><a class="menu_link" href="contacts.php">Контакты</a></li> 
         </ul>
     </header>
 
