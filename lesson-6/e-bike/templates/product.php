@@ -67,10 +67,19 @@
         <div class="text2 center">
             <h3 class="header">Оставьте своё впечатление о товаре</h3>
             
-            <form action="../engine/from.php" method="POST">
-                <span class="form_span">Имя:</span> <br> <input type="text" placeholder="Ваше имя" class="input"><br>
-                <span class="form_span">Email:</span> <br> <input type="email" placeholder="Ваш email" class="input"><br>
-                <textarea cols="30" rows="7" placeholder="О чём Вы хотели сообщить нам?"></textarea>
+            <form action="../engine/from.php" method="POST" class="form_product">
+    
+                <label for="name" class="label_product">Имя</label>
+                <input id="name" type="text" name="name" placeholder="Ваше имя">
+
+                <label for="email" class="label_product">E-mail</label>
+                <input id="email" type="email" name="email" placeholder="Ваш e-mail">
+
+                <label for="text"></label>
+                <textarea id="text" placeholder="Какие ваши впечатления?" name="text"></textarea>
+
+                <input type="submit" class="form_btn" name="send" value="Отправить">
+
             </form>
         
         </div>

@@ -1,6 +1,6 @@
 <?php
 
-$sql = "select * from comment where id = 1";
+$sql = "select * from comment order by id desc";
 $require = mysqli_query($connect,$sql);
  
 function renderComment($res, $path) {
