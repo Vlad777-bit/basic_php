@@ -1,7 +1,9 @@
 <?php
     include('../config/config.php');
+    include('../engine/getComment.php');
+    // include('../engine/from.php');
 
-    $idProduct = $_GET['id'];
+    $idProduct = (int)$_GET['id'];
 
     $sql = "select * from goods where id = $idProduct";
     $result = mysqli_query($connect,$sql);
@@ -38,8 +40,11 @@
 
             <?= $item['description_short'] ?>
             
-            <br>
-            <a href="#">Купить</a>
+            <div class="buy_product">
+                <div class="price">Цена: <b><?= $item['price'] ?>$</b></div>
+                <div class="count">Осталось: <b><?= $item['count'] ?> шт.</b></div>
+                <button class="buy_btn">Купить</button>
+            </div>
         </div>
         <h3 class="header">Характеристики товара</h3>
 
@@ -50,6 +55,24 @@
             
             <?= $item['description_long'] ?>
 
+        </div>
+
+        <div class="text2 center">
+            <h3 class="header">Отзывы покупателей</h3>
+            
+            <?php renderComment($require, '../public/') ?>
+
+        </div>
+
+        <div class="text2 center">
+            <h3 class="header">Оставьте своё впечатление о товаре</h3>
+            
+            <form action="../engine/from.php" method="POST">
+                <span class="form_span">Имя:</span> <br> <input type="text" placeholder="Ваше имя" class="input"><br>
+                <span class="form_span">Email:</span> <br> <input type="email" placeholder="Ваш email" class="input"><br>
+                <textarea cols="30" rows="7" placeholder="О чём Вы хотели сообщить нам?"></textarea>
+            </form>
+        
         </div>
 
     </div>

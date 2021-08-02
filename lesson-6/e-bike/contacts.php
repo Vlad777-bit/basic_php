@@ -22,15 +22,15 @@
     <div class="content content_contact">
         <form action="#">
             <h1>Напишите нам</h1>
-            <span>Телефон:</span> <br> <input type="text" class="input"><br>
-            <span>Пароль:</span> <br> <input type="password" class="input"><br>
+            <span class="form_span">Телефон:</span> <br> <input type="text" class="input"><br>
+            <span class="form_span">Пароль:</span> <br> <input type="password" class="input"><br>
             <input type="submit" value="Вход" class="btn n_outline">
             <input type="submit" value="Регестрация" class="btn n_outline">
             <br>
             <br>
-            <span>Имя:</span> <br> <input type="text" placeholder="Ваше имя" class="input"><br>
-            <span>Email:</span> <br> <input type="email" placeholder="Ваш email" class="input"><br>
-            <span>Тема:</span>
+            <span class="form_span">Имя:</span> <br> <input type="text" placeholder="Ваше имя" class="input"><br>
+            <span class="form_span">Email:</span> <br> <input type="email" placeholder="Ваш email" class="input"><br>
+            <span class="form_span">Тема:</span>
             <br>
             <select class="input">
                 <option>Системная ошибка</option>
@@ -42,8 +42,8 @@
             <br> <input type="text" class="input"><br>
             <textarea cols="30" rows="7" placeholder="О чём Вы хотели сообщить нам?"></textarea>
             <br>
-            <span>Телефон</span> <br> <input type="text" placeholder="необязательно" class="input"><br>
-            <span>Обратная связь</span> <input type="checkbox"><br>
+            <span class="form_span">Телефон</span> <br> <input type="text" placeholder="необязательно" class="input"><br>
+            <span class="form_span">Обратная связь</span> <input type="checkbox"><br>
             <input type="submit" value="Отправить" class="btn">
             <input type="reset" value="Сбросить" class="btn">
         </form>
