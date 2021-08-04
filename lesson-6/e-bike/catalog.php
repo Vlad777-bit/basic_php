@@ -1,3 +1,8 @@
+<?php
+    include('./config/config.php');
+    include('./engine/getGoods.php');
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +27,9 @@
     <div class="content">
         <h1>Каталог</h1>
 
-        <?php include('./templates/cards.php'); ?>
+        <div class="links">
+            <?= renderCards($result, './public/', '223px') ?>
+        </div>  
     </div>
 
     <footer>

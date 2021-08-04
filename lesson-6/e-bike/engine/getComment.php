@@ -1,6 +1,8 @@
 <?php
 
-$sql = "select * from comment order by id desc";
+$idProduct = trim(strip_tags($_GET['id']));
+
+$sql = "select * from comments where good_id = $idProduct order by id desc";
 $require = mysqli_query($connect,$sql);
  
 function renderComment($res, $path) {
@@ -12,9 +14,9 @@ function renderComment($res, $path) {
       </div>
 
       <div class="content_comment">
-        <blockquote class="content_desc"><?= $data['text'] ?></blockquote>
-        <cite><?= $data['fio'] ?></cite>
-        <div><?= $data['email'] ?></div>
+        <blockquote class="content_desc"><?= $data['text'] ?></blockquote> 
+        <cite>Имя: <?= $data['name'] ?></cite>
+        <div>e-mail: <?= $data['email'] ?></div>
         <div><?= $data['created_at'] ?></div>
       </div>
 

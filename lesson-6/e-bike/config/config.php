@@ -1,7 +1,7 @@
 <?php
 
 const SERVER = "localhost";
-const DB = "shop";
+const DB = "e-bikes";
 const LOGIN = "vlad"; 
 const PASS = "0000"; 
 

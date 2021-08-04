@@ -1,16 +1,10 @@
 <?php
     include('../config/config.php');
     include('../engine/getComment.php');
-    // include('../engine/from.php');
+    include('../engine/renderProduct.php');
+?>
 
-    $idProduct = (int)$_GET['id'];
-
-    $sql = "select * from goods where id = $idProduct";
-    $result = mysqli_query($connect,$sql);
-    
-    while($item = mysqli_fetch_assoc($result)): ?>
-
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 <head>
     <meta charset="UTF-8">
@@ -32,13 +26,15 @@
     </header>
 
     <div class="content content_product">
+        
         <h1><?= $item['name'] ?></h1>
-        <a href="../public/<?= $item['path'] ?>" target="_blank"><img src="../public/<?= $item['path'] ?>" alt="bike" class="img"></a>
+
+        <a href="../public/<?= $item['photo'] ?>" target="_blank"><img src="../public/<?= $item['photo'] ?>" alt="bike" class="img"></a>
         <div class="text">
             
             <h3 class="header">Описание товара</h3>
 
-            <?= $item['description_short'] ?>
+            <?= $item['desc_short'] ?>
             
             <div class="buy_product">
                 <div class="price">Цена: <b><?= $item['price'] ?>$</b></div>
@@ -53,14 +49,14 @@
         <div class="text2">
             <h3 class="header">Подробное описание товара</h3>
             
-            <?= $item['description_long'] ?>
+            <?= $item['desc_long'] ?>
 
         </div>
 
         <div class="text2 center">
             <h3 class="header">Отзывы покупателей</h3>
             
-            <?php renderComment($require, '../public/') ?>
+             <?php renderComment($require, '../public/') ?> 
 
         </div>
 
@@ -68,7 +64,9 @@
             <h3 class="header">Оставьте своё впечатление о товаре</h3>
             
             <form action="../engine/from.php" method="POST" class="form_product">
-    
+                
+                <input type="text" name="id" value="<?= $idProduct ?>" hidden>
+
                 <label for="name" class="label_product">Имя</label>
                 <input id="name" type="text" name="name" placeholder="Ваше имя">
 
@@ -85,10 +83,6 @@
         </div>
 
     </div>
-
-    <?php
-        endwhile
-    ?>
 
     <footer>
 	    &copy Все права защищены
