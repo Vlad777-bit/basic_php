@@ -73,12 +73,14 @@ header img {
     font-size: 25px;
     color: royalblue;
     padding: 0 25px 0 25px;
+    margin-bottom: 50px;
 }
 /*Каталог*/
 .product {
     width: 223px;
     margin: 50px 50px 0 0;
     outline: 5px solid coral;
+    transition: .5s;
 }
 
 .product .name {
@@ -86,7 +88,6 @@ header img {
     font-size: 1em;
     color: royalblue;
     text-decoration: none;
-    transition: .5s;
 }
 
 .product .name:hover {
@@ -95,7 +96,7 @@ header img {
 }
 
 .product:hover {
-    outline: none;
+    outline: 5px solid #ffefd5;
 }
 
 .links {
@@ -168,7 +169,7 @@ caption {
 }
 
 .img:hover {
-    outline: none;
+    outline: 3px solid #ffefd5;
 }
 
 .specifications {
@@ -281,7 +282,7 @@ caption {
     color: chocolate;
     background: wheat;
     border: none;
-    margin: 0 0 10px 0;
+    margin: 10px 0 10px 0;
     outline: none;
     transition: .5s;
 }
@@ -299,6 +300,14 @@ caption {
     min-height: 150px;
     resize: vertical;
     font-size: 1em;
+}
+
+#desc_short, #desc_long {
+    margin: 10px 0 10px 0;
+    width: 96%;
+    min-height: 150px;
+    resize: vertical;
+    font-size: 0.6em;
 }
 
 .form_btn {
@@ -430,4 +439,71 @@ footer {
     color: wheat;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
+}
+
+.disable-outline {
+    outline: none;
+}
+
+.disable-outline:hover {
+    outline: none;
+}
+
+/*Админка*/
+
+.carts {
+    display: grid;
+    grid-template-columns: repeat(4, 223px);
+    justify-content: center;
+    gap: 50px;
+}
+
+.cart {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border: 3px solid #ff754e;
+    padding: 10px;
+}
+
+.cart__img {
+    
+}
+
+.cart__name {
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: auto;
+}
+
+.cart__form {
+    width: 100%;
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cart__btn  {
+    width: 100%;
+    padding: 5px;
+    background: coral;
+    color: wheat;
+    transition: .5s;
+    border: none;
+    font-size: 0.8em;
+    margin-top: 10px;
+}
+
+.cart__btn:hover {
+    color: coral;
+    background-color: wheat;
+}
+
+.title {
+    color: deepskyblue;
+    font-style: italic;
+    width: 100%;
 }
