@@ -10,7 +10,7 @@
   $specification = trim(($_POST['specification']));
   $desc_long = trim(($_POST['desc_long']));
 
-  $sql = "insert";
+  $sql = "insert goods (name, price, desc_short, desc_long, count, specification) values ('$name', $price, '$desc_short', '$desc_long', $count, '$specification');";
   $result = mysqli_query($connect, $sql);
 
   if(!$result){
