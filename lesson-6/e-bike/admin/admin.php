@@ -24,10 +24,18 @@
         </ul>
     </header>
 
-    <div class="content">
+    <div class="content"> 
 
       <div class="carts">
         <?= renderCards($result, '../public/', '223px') ?>
+
+        <div class="cart"> 
+            <form action="../engine/server.php" method="POST" class="cart__form">
+              <button type="submit" class="cart__btn cart__add" name="add" value="add">
+                +
+              </button>
+            </form>
+        </div>
       </div>   
 
     </div>

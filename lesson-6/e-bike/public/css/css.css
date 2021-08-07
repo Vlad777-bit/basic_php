@@ -275,7 +275,7 @@ caption {
     text-transform: capitalize;
 }
 
-#name, #email {
+#name, #email, #price, #count {
     width: 96%;
     padding: 2%;
     font-size: 18px;
@@ -287,7 +287,7 @@ caption {
     transition: .5s;
 }
 
-#name:focus, #email:focus, #text:focus {
+#name:focus, #email:focus, #text:focus, #price:focus, #count:focus, #desc_short:focus, #desc_long:focus, #specification:focus  {
     background-color: #ff754e;
     outline: 3px solid #f5deb3;
     color: #f5deb3;
@@ -300,14 +300,16 @@ caption {
     min-height: 150px;
     resize: vertical;
     font-size: 1em;
+    transition: .5s;
 }
 
-#desc_short, #desc_long {
+#desc_short, #desc_long, #specification {
     margin: 10px 0 10px 0;
     width: 96%;
     min-height: 150px;
     resize: vertical;
     font-size: 0.6em;
+    transition: .5s;
 }
 
 .form_btn {
@@ -449,6 +451,10 @@ footer {
     outline: none;
 }
 
+.w80 {
+    width: 80%;
+}
+
 /*Админка*/
 
 .carts {
@@ -464,7 +470,7 @@ footer {
     flex-direction: column;
     justify-content: space-between;
 
-    border: 3px solid #ff754e;
+    outline: 3px solid #ff754e;
     padding: 10px;
 }
 
@@ -495,6 +501,13 @@ footer {
     border: none;
     font-size: 0.8em;
     margin-top: 10px;
+}
+
+.cart__add {
+    font-size: 8em;
+    margin: 0;
+    padding: 0;
+    position: relative;
 }
 
 .cart__btn:hover {

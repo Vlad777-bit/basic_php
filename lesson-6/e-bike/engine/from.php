@@ -11,7 +11,6 @@ $text = trim(strip_tags($_POST['text']));
 
 if ($name && $email && $text) {
 
-  // $sql = "insert into comments (name, email, text) values ('$name', '$email', '$text')";
   $sql = "insert into comments (name, email, text, good_id) value ('$name', '$email', '$text', '$idProduct');";
   $result = mysqli_query($connect, $sql);
 
