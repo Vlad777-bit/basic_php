@@ -1,3 +1,7 @@
+<?php
+    include ('./templates/menu.php');
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,14 +14,7 @@
 <body>
 <div class="container">
 
-    <header>
-       <a href="index.php"><img src="./public/img/e-bike.webp" alt="logo"></a> 
-        <ul class="menu">
-            <li><a class="menu_link" href="index.php">Главная</a></li>
-            <li><a class="menu_link" href="catalog.php">Каталог</a></li>
-            <li><a class="menu_link"href="signInOrReg.php">Войти</a></li>
-        </ul>
-    </header>
+    <?= renderMenu() ?>
 
     <div class="content">
         <h1 class="title">E-bike</h1>

@@ -1,5 +1,6 @@
 <?php
   include('../config/config.php');
+  include ('../templates/menu.php');
   include('../engine/editProduct.php');
 ?>
 
@@ -15,14 +16,8 @@
 <body>
 <div class="container">
 
-    <header>
-       <a href="index.php"><img src="../public/img/e-bike.webp" alt="logo"></a> 
-        <ul class="menu">
-            <li><a class="menu_link" href="../index.php">Главная</a></li>
-            <li><a class="menu_link" href="../catalog.php">Каталог</a></li>
-            <li><a class="menu_link"href="../signInOrReg.php">Войти</a></li>
-        </ul>
-    </header>
+  <?= renderMenu('../') ?>
+    
 
     <div class="content"> 
 
@@ -31,9 +26,9 @@
 
         <div class="cart"> 
             <form action="../engine/server.php" method="POST" class="cart__form">
-              <button type="submit" class="cart__btn cart__add" name="add" value="add">
-                +
-              </button>
+                <button type="submit" class="cart__btn cart__add" name="add" value="add">
+                    +
+                </button>
             </form>
         </div>
       </div>   

@@ -1,5 +1,6 @@
 <?php
     include('../config/config.php');
+    include ('./menu.php');
     include('../engine/getComment.php');
     include('../engine/renderProduct.php');
 ?>
@@ -16,14 +17,7 @@
 <body> 
 <div class="container">
     
-    <header>
-       <a href="../index.php"><img src="../public/img/e-bike.webp" alt="logo"></a> 
-        <ul class="menu">
-            <li><a class="menu_link" href="../index.php">Главная</a></li>
-            <li><a class="menu_link" href="../catalog.php">Каталог</a></li>
-            <li><a class="menu_link"href="../signInOrReg.php">Войти</a></li>
-        </ul>
-    </header>
+    <?= renderMenu('../') ?>
 
     <div class="content content_product">
         

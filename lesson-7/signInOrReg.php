@@ -1,5 +1,6 @@
 <?php
-
+    include ('./engine/session.php');
+    include ('./templates/menu.php');
 ?>
 
 <!DOCTYPE html>
@@ -14,14 +15,7 @@
 <body>
 <div class="container">
 
-    <header>
-       <a href="index.php"><img src="./public/img/e-bike.webp" alt="logo"></a> 
-        <ul class="menu">
-            <li><a class="menu_link" href="index.php">Главная</a></li>
-            <li><a class="menu_link" href="catalog.php">Каталог</a></li>
-            <li><a class="menu_link"href="signInOrReg.php">Войти</a></li>
-        </ul>
-    </header>
+    <?= renderMenu() ?>
 
     <div class="content center">
         <h1 class="title center">Вход</h1>
@@ -35,7 +29,7 @@
                 <input id="login" type="text" name="login" placeholder="Ваш логин" value="<?= $_SESSION['login'] ?>">
 
                 <label for="password" class="label_product">Пароль</label>
-                <input id="password" type="password" name="password" placeholder="Ваш пароль" value="">
+                <input id="password" type="password" name="password" placeholder="Ваш пароль" value="<?= $_SESSION['password'] ?>">
 
                 <div class="sign-in__btn">
                     <input type="submit" class="form_btn" name="sign-in" value="Вход">
