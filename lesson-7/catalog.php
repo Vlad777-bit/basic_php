@@ -20,12 +20,12 @@
         <ul class="menu">
             <li><a class="menu_link" href="index.php">Главная</a></li>
             <li><a class="menu_link" href="catalog.php">Каталог</a></li>
-            <li><a class="menu_link" href="contacts.php">Контакты</a></li> 
+            <li><a class="menu_link"href="signInOrReg.php">Войти</a></li> 
         </ul>
     </header>
 
     <div class="content">
-        <h1>Каталог</h1>
+        <h1 class="title">Каталог</h1>
 
         <div class="links">
             <?= renderCards($result, './public/', '223px') ?>

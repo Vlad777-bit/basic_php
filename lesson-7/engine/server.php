@@ -1,6 +1,5 @@
 <?php 
-
-  include('../config/config.php');
+  include ('./session.php');
 
   if ($_POST['edit']) {
     $id = $_POST['edit'];
@@ -13,11 +12,15 @@
   }
 
   if ($_POST['add']) {
-    header("Location: ../admin/addProduct.php?id=$id");
+    header("Location: ../admin/addProduct.php");
   }
 
-echo '<pre>';
-  print_r($_POST);
-echo '</pre>';
+  if ($_POST['login'] && $_POST['password']) {
+    $_SESSION['login'] = $_POST['login'];
+    $_SESSION['password'] = $_POST['password'];
+    header("Location: ./checkingLogin.php");
+  }
 
-
+  if ($_POST['registration']) {
+    echo 'Зарегестрировался';
+  }

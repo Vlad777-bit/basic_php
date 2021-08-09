@@ -15,14 +15,14 @@
         <ul class="menu">
             <li><a class="menu_link" href="index.php">Главная</a></li>
             <li><a class="menu_link" href="catalog.php">Каталог</a></li>
-            <li><a class="menu_link" href="contacts.php">Контакты</a></li>
+            <li><a class="menu_link"href="signInOrReg.php">Войти</a></li>
         </ul>
     </header>
 
     <div class="content">
-        <h1>E-bikes</h1>
+        <h1 class="title">E-bike</h1>
         <p>
-            <b>Дорогие друзья!</b> Я&nbsp;рад, что&nbsp;Вы смогли посетить наш интернет-магазин <i>E-bikes</i>
+            <b>Дорогие друзья!</b> Я&nbsp;рад, что&nbsp;Вы смогли посетить наш интернет-магазин <i>E-bike</i>
             Надеюсь Вы&nbsp;найдёте
             электровелосипед, подходящий именно Вам!
         </p>

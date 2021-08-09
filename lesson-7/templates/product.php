@@ -21,13 +21,13 @@
         <ul class="menu">
             <li><a class="menu_link" href="../index.php">Главная</a></li>
             <li><a class="menu_link" href="../catalog.php">Каталог</a></li>
-            <li><a class="menu_link" href="../contacts.php">Контакты</a></li>
+            <li><a class="menu_link"href="../signInOrReg.php">Войти</a></li>
         </ul>
     </header>
 
     <div class="content content_product">
         
-        <h1><?= $item['name'] ?></h1>
+        <h1 class="title"><?= $item['name'] ?></h1>
 
         <a href="../public/<?= $item['photo'] ?>" target="_blank"><img src="../public/<?= $item['photo'] ?>" alt="bike" class="img"></a>
         <div class="text">
