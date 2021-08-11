@@ -251,7 +251,7 @@ caption {
 
 .form_product {
     width: 40%;
-    height: 50vh;
+    min-height: 50vh;
     background: #ff754e;
     padding: 25px;
     border-radius: 15px;

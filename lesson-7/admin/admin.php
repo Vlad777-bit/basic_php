@@ -4,8 +4,7 @@
   include ('../templates/menu.php');
   include('../engine/editProduct.php');
 
-//   if ($_SESSION['login'] !== 'admin' && $_SESSION['password'])
-?>
+  if ($_SESSION['login'] === 'admin' && $_SESSION['password']) {?>
 
 <!DOCTYPE html>
 <html>
@@ -41,7 +40,10 @@
     <footer>
 	    &copy Все права защищены
     </footer>
-    
+
+    <?php 
+      } else { exit('Вы не Admin!'); }
+    ?>
 </div>
 </body>
 
