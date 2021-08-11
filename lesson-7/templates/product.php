@@ -1,4 +1,5 @@
 <?php
+    include ('../engine/session.php');
     include('../config/config.php');
     include ('./menu.php');
     include('../engine/getComment.php');
@@ -62,7 +63,7 @@
                 <input type="text" name="id" value="<?= $idProduct ?>" hidden>
 
                 <label for="name" class="label_product">Имя</label>
-                <input id="name" type="text" name="name" placeholder="Ваше имя">
+                <input id="name" type="text" name="name" placeholder="Ваше имя" value="<?= $_SESSION['login'] ? $_SESSION['login'] : '' ?>">
 
                 <label for="email" class="label_product">E-mail</label>
                 <input id="email" type="email" name="email" placeholder="Ваш e-mail">

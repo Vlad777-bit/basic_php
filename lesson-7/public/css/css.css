@@ -325,13 +325,6 @@ caption {
 }
 
 /*Контакты*/
-form {
-    width: 40%;
-    background: coral;
-    padding: 25px;
-    border-radius: 15px;
-    margin: 0 25px 20px 0;
-}
 
 .form_span {
     color: wheat;
@@ -505,4 +498,9 @@ footer {
     color: deepskyblue;
     font-style: italic;
     margin-bottom: 20px;
+}
+
+.error {
+    color: black;
+    font-size: 0.8em;
 }

@@ -1,7 +1,8 @@
 <?php
-  include('../config/config.php');
-  include ('../templates/menu.php');
-  include('../engine/renderProduct.php');
+    include ('../engine/session.php');
+    include('../config/config.php');
+    include ('../templates/menu.php');
+    include('../engine/renderProduct.php');
 ?>
 
 <!DOCTYPE html>

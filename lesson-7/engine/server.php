@@ -14,13 +14,3 @@
   if ($_POST['add']) {
     header("Location: ../admin/addProduct.php");
   }
-
-  if ($_POST['login'] && $_POST['password']) {
-    $_SESSION['login'] = $_POST['login'];
-    $_SESSION['password'] = $_POST['password'];
-    header("Location: ./checkingLogin.php");
-  }
-
-  if ($_POST['registration']) {
-    echo 'Зарегестрировался';
-  }

@@ -1,4 +1,5 @@
 <?php
+    include ('./engine/session.php');
     include ('./templates/menu.php');
 ?>
 
