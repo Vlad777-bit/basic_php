@@ -16,13 +16,13 @@ function renderMenu($path = '') {?>
           
           elseif($_SESSION['login'] === 'admin' && $_SESSION['password']):?>
 
-          <li><a class="menu_link"href="<?= $path ?>templates/personalAccount.php"><?= $_SESSION['name'] ?></a></li>
+          <li><a class="menu_link uppercase"href="<?= $path ?>templates/personalAccount.php"><?= $_SESSION['login'] ?></a></li>
           <li><a class="menu_link"href="<?= $path ?>admin/admin.php">Админка</a></li>
         <?php
 
           else:?>
 
-          <li><a class="menu_link"href="<?= $path ?>templates/personalAccount.php"><?= $_SESSION['name'] ?></a></li>
+          <li><a class="menu_link uppercase"href="<?= $path ?>templates/personalAccount.php"><?= $_SESSION['login'] ?></a></li>
       </ul>
 
         <?php

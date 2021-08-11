@@ -2,12 +2,14 @@
 
 include ('../config/config.php');
 
-function newUser($connect, $name, $login, $password){
+function newUser($connect, $login, $password){
 
-  $sql = "insert into users (name, login, password) values ('$name', '$login', '$password')";
+  $sql = "insert into users (login, password) values ('$login', '$password')";
   $result = mysqli_query($connect, $sql);
 
   if(!$result){
-    die(mysqli_error($connect));
+    header("Location: ../signInOrReg.php?login=false");
   }
+
+  return true;
 }

@@ -2,50 +2,69 @@
 
   include ('./session.php');
   include ('../config/config.php');
+
+  include ('./setData.php');
   include ('./getData.php');
-  
+
+  $salt = "qwerasdzxc";
 
   if ($_POST['registration']) {
 
-    $login = trim(strip_tags($_POST['login']));
-
+    $login = trim(strip_tags($_POST['new_login']));
+ 
     if (strtolower($login) === 'admin') {
-      exit("Логин админа нельзя зарегистрировать!");
+      header("Location: ../signInOrReg.php?new_login=admin");
+      exit('error login');
     }
 
     $users = getData($connect, 'users');
 
     foreach ($users as $user) {
-      if ($login === $user['login']) {
-        exit("Такой уже логин есть!");
+      if ($login === $user['new_login']) {
+        header("Location: ../signInOrReg.php?new_login=false");
+        exit('error login');
       }
     }
 
-    $pass = trim(strip_tags($_POST['password']));
+    $password = trim(strip_tags($_POST['new_password']));
+    $repeat_password = trim(strip_tags($_POST['repeat_password']));
 
-    newUser($connect, $name, $login, md5($password));
+    if ($password !== $repeat_password) {
+      header("Location: ../signInOrReg.php?pass=false");
+      exit('error password');
+    } 
 
-    $message = "Вы зарегистрированы!";
+    if (newUser($connect, $login, $salt . md5($password) . $salt)) {
+      $_SESSION['login'] = $login;
+      $_SESSION['password'] = $password;
+    }
 
+    if ($_SESSION['login'] && $_SESSION['password']) {
+      header("Location: ../templates/personalAccount.php");
+    }
   }
 
   if ($_POST['sign-in']) {
     $login = trim(strip_tags($_POST['login']));
     $password = trim(strip_tags($_POST['password']));
-    $salt = "qwerasdzxc";
-     
+
     $users = getData($connect, 'users');
 
     foreach ($users as $user) {
-
-      $user['name'] ? $_SESSION['name'] = $user['name'] : 'Человек';
+      
       $login === $user['login'] ? $_SESSION['login'] = $login : '';
       $salt . md5($password) . $salt === $user['password'] ? $_SESSION['password'] = $password : '';
 
       if ($_SESSION['login'] && $_SESSION['password']) {
         header("Location: ../templates/personalAccount.php");
-      } else {
-        header("Location: ../signInOrReg.php?success=false");
+      }
+      
+      if (!$_SESSION['login']) {
+        header("Location: ../signInOrReg.php?login=false");
+      }
+
+      if (!$_SESSION['password']) {
+        header("Location: ../signInOrReg.php?password=false");
       }
     }
   } 

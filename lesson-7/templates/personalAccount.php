@@ -20,7 +20,7 @@
     <div class="content center">
         <h1 class="title center">Личный кабинет</h1>
 
-        <span>Добро пожаловать <?= $_SESSION['name'] ?></span>
+        <span>Добро пожаловать <b class="uppercase"><?= $_SESSION['login'] ?></b></span>
 
         <form action="../engine/validData.php" method="POST">
             <input type="submit" name="signOut" value="Выйти" class="form_btn">

@@ -251,6 +251,7 @@ caption {
 
 .form_product {
     width: 40%;
+    height: 50vh;
     background: #ff754e;
     padding: 25px;
     border-radius: 15px;
@@ -259,6 +260,7 @@ caption {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: space-between;
 }
 
 .label_product {
@@ -269,7 +271,9 @@ caption {
     text-transform: capitalize;
 }
 
-#name, #email, #price, #count, #login, #password {
+#name, #email, #price, #count, #login,
+#password, #new_login, #new_password, #repeat_password 
+{
     width: 96%;
     padding: 2%;
     font-size: 18px;
@@ -281,7 +285,10 @@ caption {
     transition: .5s;
 }
 
-#name:focus, #email:focus, #text:focus, #price:focus, #count:focus, #desc_short:focus, #desc_long:focus, #specification:focus, #login:focus, #password:focus  {
+#name:focus, #email:focus, #text:focus, #price:focus, #count:focus,
+#desc_short:focus, #desc_long:focus, #specification:focus, #login:focus, #password:focus,
+#new_login:focus, #new_password:focus, #repeat_password:focus  
+{
     background-color: #ff754e;
     outline: 3px solid #f5deb3;
     color: #f5deb3;
@@ -503,4 +510,8 @@ footer {
 .error {
     color: black;
     font-size: 0.8em;
+}
+
+.uppercase {
+    text-transform: capitalize;
 }
