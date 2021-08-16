@@ -21,8 +21,8 @@ function getData($connect, $table, $orderby='id'){
   return $item;
 }
 
-function getOne($connect, $id, $table){
-  $query = sprintf("SELECT * FROM {$table} where id=%d",(int)$id);
+function getUser($connect, $login, $table){
+  $query = "SELECT * FROM {$table} where login = '$login'";
   $result = mysqli_query($connect, $query);
 
   if(!$result)

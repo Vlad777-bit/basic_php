@@ -27,6 +27,8 @@
                 <div>
                     <label for="login" class="label_product">Логин</label>
 
+                    <br>
+
                     <?php if ($_GET['login'] === 'false'):?>
                         <span class="error">Неверно введен логин</span>
                     <?php endif; ?>
@@ -35,14 +37,14 @@
 
                     <label for="password" class="label_product">Пароль</label>
 
+                    <br>
+
                     <?php if ($_GET['password'] === 'false'):?>
                         <span class="error">Неверно введен пароль</span>
                     <?php endif; ?>
 
                     <input id="password" type="password" name="password" placeholder="Ваш пароль" value="<?= $_SESSION['password'] ? $_SESSION['password'] : '' ?>">
                 </div>
-
-                
 
                 <div class="sign-in__btn">
                     <input type="submit" class="form_btn" name="sign-in" value="Вход">

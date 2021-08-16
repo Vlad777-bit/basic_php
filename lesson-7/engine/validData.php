@@ -17,13 +17,11 @@
       exit('error login');
     }
 
-    $users = getData($connect, 'users');
+    $user = getUser($connect, $login, 'users');
 
-    foreach ($users as $user) {
-      if ($login === $user['new_login']) {
-        header("Location: ../signInOrReg.php?new_login=false");
-        exit('error login');
-      }
+    if ($login === $user['login']) {
+      header("Location: ../signInOrReg.php?new_login=false");
+      exit('error login');
     }
 
     $password = trim(strip_tags($_POST['new_password']));
@@ -45,34 +43,35 @@
   }
 
   if ($_POST['sign-in']) {
+
     $login = trim(strip_tags($_POST['login']));
     $password = trim(strip_tags($_POST['password']));
 
-    $users = getData($connect, 'users');
-
-    foreach ($users as $user) {
+    $user = getUser($connect, $login, 'users');
       
-      $login === $user['login'] ? $_SESSION['login'] = $login : '';
-      $salt . md5($password) . $salt === $user['password'] ? $_SESSION['password'] = $password : '';
+    $login === $user['login'] ? $_SESSION['login'] = $login : '';
+    $salt . md5($password) . $salt === $user['password'] ? $_SESSION['password'] = $password : '';
 
-      if ($_SESSION['login'] && $_SESSION['password']) {
-        header("Location: ../templates/personalAccount.php");
-      }
-      
-      if (!$_SESSION['login']) {
-        header("Location: ../signInOrReg.php?login=false");
-      }
-
-      if (!$_SESSION['password']) {
-        header("Location: ../signInOrReg.php?password=false");
-      }
+    if (!$_SESSION['login']) {
+      header("Location: ../signInOrReg.php?login=false");
+      exit('error login');
     }
-  } 
+
+    if (!$_SESSION['password']) {
+      header("Location: ../signInOrReg.php?password=false");
+      exit('error password');
+    }
+
+    if ($_SESSION['login'] && $_SESSION['password']) {
+      header("Location: ../templates/personalAccount.php");
+      exit('All right!');
+    }
+  }
 
   if ($_POST['signOut']) {
     unset($_SESSION['name']);
     unset($_SESSION['login']);
     unset($_SESSION['password']);
     session_destroy();
-    header('Location: ../index.php');
+    header('Location: ../signInOrReg.php');
   }
