@@ -23,11 +23,15 @@ function renderMenu($path = '') {?>
           else:?>
 
           <li><a class="menu_link uppercase"href="<?= $path ?>templates/personalAccount.php"><?= $_SESSION['login'] ?></a></li>
+
+          <?php
+            endif;
+          ?>
+
+          <li><a class="menu_link basket__btn"href=""><img src="<?= $path ?>public/img/basket.png"></a></li>
       </ul>
 
-        <?php
-          endif;
-        ?>
+        
     </header>
 
   <?php
