@@ -14,8 +14,7 @@ function getData($connect, $table, $orderby='id'){
   $item = [];
 
   for($i = 0; $i < $rows; $i++){
-      $row = mysqli_fetch_assoc($result);
-      $item[] = $row;
+    $item[] = mysqli_fetch_assoc($result);;
   }
 
   return $item;

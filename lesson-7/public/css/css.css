@@ -347,19 +347,21 @@ textarea {
 }
 
 .input {
-    width: 200px;
+    width: 96%;
     padding: 2%;
-    font-family: "Roboto Light";
     font-size: 18px;
     color: chocolate;
     background: wheat;
     border: none;
-    margin: 0 0 10px 0;
+    margin: 10px 0 10px 0;
     outline: none;
+    transition: .5s;
 }
 
 .input:focus {
-    background: #eaeaea;
+    background-color: #ff754e;
+    outline: 3px solid #f5deb3;
+    color: #f5deb3;
 }
 
 .input[type="text"] {
@@ -432,12 +434,23 @@ footer {
     outline: none;
 }
 
+.w100 {
+    width: 100%;
+    height: inherit;
+}
+
 .w80 {
     width: 80%;
+    height: inherit;
 }
 
 .w50 {
     width: 50%;
+    height: inherit;
+}
+
+.mt20 {
+    margin-top: 20px;
 }
 
 /*Админка*/
@@ -529,4 +542,15 @@ footer {
 .basket__btn > img {
     width: 100%;
     height: auto;
+}
+
+.table {
+    border: 2px solid black;
+}
+
+.table td {
+    width: 20%;
+    padding: 5px;
+    border: 1px solid black;
+    text-align: center;
 }

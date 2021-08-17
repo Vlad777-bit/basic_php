@@ -28,7 +28,7 @@ function renderMenu($path = '') {?>
             endif;
           ?>
 
-          <li><a class="menu_link basket__btn"href=""><img src="<?= $path ?>public/img/basket.png"></a></li>
+          <li><a class="menu_link basket__btn"href="<?= $path ?>templates/cart.php"><img src="<?= $path ?>public/img/basket.png"></a></li>
       </ul>
 
         
